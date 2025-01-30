@@ -12,7 +12,13 @@ const app = express();
 const PORT = process.env.PORT || 5050;
 
 // Middleware
-app.use(cors());
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  }),
+);
 app.use(bodyParser.json());
 
 // Connect to MongoDB

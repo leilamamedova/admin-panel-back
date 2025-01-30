@@ -9,6 +9,7 @@ import {
   updateGame,
 } from '../controllers/gameController.js';
 import { getSponsors } from '../controllers/sponsorController.js';
+import { login } from '../controllers/authController.js';
 
 const router = express.Router();
 
@@ -29,5 +30,8 @@ router.put('/games/:id', updateGame);
 
 // Route for getting sponsors
 router.get('/sponsors', getSponsors);
+
+// Route for login
+router.post('/login', login);
 
 export default router;
