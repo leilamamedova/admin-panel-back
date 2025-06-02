@@ -4,8 +4,6 @@ import { getCollection } from '../db/mongodb.js';
 export const getGames = async (req, res) => {
   const { page = 1, limit = 10, startDate, endDate, isCurrent } = req.query;
 
-  console.log('v', typeof isCurrent);
-
   const query = {};
 
   if (startDate) query.startDate = { $gte: new Date(startDate) };

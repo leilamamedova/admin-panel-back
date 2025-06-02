@@ -51,9 +51,8 @@ export const toggleUserActivation = async (req, res) => {
   try {
     const collection = getCollection('users');
 
-    // Assuming your data uses the field 'id' instead of '_id'
     const result = await collection.updateOne(
-      { id: parseInt(id) }, // Use 'id' field and convert to integer
+      { id: parseInt(id) },
       { $set: { isActive } },
     );
 
